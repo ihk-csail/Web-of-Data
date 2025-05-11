@@ -1,0 +1,92 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/rbox_ontology#> .
+
+### Recipe Class (Subclass of Schema.org Recipe)
+:Recipe a rdfs:Class ;
+    rdfs:subClassOf schema:Recipe ;
+    rdfs:label "Recipe" ;
+    rdfs:comment "A class representing a recipe." .
+
+### Ingredient Class
+:Ingredient a rdfs:Class ;
+    rdfs:label "Ingredient" ;
+    rdfs:comment "A class representing an ingredient used in recipes." .
+
+### Customer Class
+:Customer a rdfs:Class ;
+    rdfs:label "Customer" ;
+    rdfs:comment "A class representing customers who order recipes." .
+
+### Properties that I created and from Schema.org
+:hasIngredient a rdf:Property ;
+    rdfs:label "has ingredient" ;
+    rdfs:domain :Recipe ;
+    rdfs:range :Ingredient ;
+    rdfs:comment "Links a recipe to its ingredients." .
+    
+:cookTime a rdf:Property ;
+    rdfs:subPropertyOf schema:cookTime ;
+    rdfs:domain :Recipe ;
+    rdfs:range schema:Duration ;
+    rdfs:label "Cook Time" ;
+    rdfs:comment "The time it takes to actually cook the dish." .
+
+:cookingMethod a rdf:Property ;
+    rdfs:subPropertyOf schema:cookingMethod ;
+    rdfs:domain :Recipe ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "Cooking Method" ;
+    rdfs:comment "The method of cooking, such as Frying, Steaming." .
+
+:recipeInstructions a rdf:Property ;
+    rdfs:subPropertyOf schema:recipeInstructions ;
+    rdfs:domain :Recipe ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "Recipe Instructions" ;
+    rdfs:comment "A step in making the recipe." .
+
+:recipeYield a rdf:Property ;
+    rdfs:subPropertyOf schema:recipeYield ;
+    rdfs:domain :Recipe ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "Recipe Yield" ;
+    rdfs:comment "The quantity produced by the recipe." .
+
+:suitableForBudget a rdf:Property ;
+    rdfs:label "suitable for budget" ;
+    rdfs:domain :Recipe ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Indicates whether a recipe is suitable for a specific budget (e.g., Low, Medium, High)." .
+
+:proteinContent a rdf:Property ;
+    rdfs:label "Protein Content" ;
+    rdfs:domain :Recipe ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The amount of protein per serving in grams." .
+
+:energyContent a rdf:Property ;
+    rdfs:label "Energy Content" ;
+    rdfs:domain :Recipe ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The amount of energy per serving in kilocalories (kcal)." .
+
+:fatContent a rdf:Property ;
+    rdfs:label "Fat Content" ;
+    rdfs:domain :Recipe ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The amount of fat per serving in grams." .
+
+:carbohydrateContent a rdf:Property ;
+    rdfs:label "Carbohydrate Content" ;
+    rdfs:domain :Recipe ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "The amount of carbohydrates per serving in grams." .
+
+:heatLevel a rdf:Property ;
+    rdfs:label "Heat Level" ;
+    rdfs:domain :Recipe ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The level of spiciness of the dish (e.g., Mild, Medium, Hot)." .

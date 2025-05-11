@@ -1,0 +1,455 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.org/rbox#> .
+
+### Recipe Instances
+:SpaghettiBolognese a :Recipe ;
+    :cookTime "PT1H" ; # 1 hour in ISO 8601 duration format
+    :hasIngredient :Spaghetti ;
+    :hasIngredient :TomatoSauce ;
+    :hasIngredient :GroundBeef ;
+    :suitableForBudget "High" ;
+	:proteinContent 50.0 ; # grams per serving
+    :energyContent 800.0 ; # kcal per serving
+    :fatContent 55.0 ; # grams per serving
+    :carbohydrateContent 200.0 ; # grams per serving
+	:heatLevel "mild" ;
+    :recipeYield "2 servings" ;
+    :orderedBy :CustomerJohnDoe .
+	
+### Customer Instances
+:CustomerJohnDoe a :Customer ;
+    schema:name "John Doe" ;
+
+### Review
+:Review001 a :Review ;
+    :reviewedBy :JohnDoe ;
+    rdfs:comment "Amazing Spaghetti Bolognese." .
+
+2. #--------------------------------------------------#
+
+### Recipe Instances
+:BritishBeefWellington a :Recipe ;
+    :cookTime "PT90M" 
+    :hasIngredient : OliveOil ;
+    :hasIngredient : Mushrooms ;
+    :hasIngredient : Salt ;
+    :hasIngredient : Beeffillet ;
+    :hasIngredient : Butter ;
+    :hasIngredient : Mustard ;
+    :hasIngredient : Flour ;
+    :hasIngredient : Pastry ;
+	:hasIngredient : Eggs ;
+	:proteinContent 64.0 ; 
+    :energyContent 947.0 ;
+    :fatContent 55.0 ; 
+    :carbohydrateContent 45.0 ;
+	:heatLevel "mild" ;
+    :suitableForBudget "Low" ; # expensive
+    :recipeYield "2" ;
+    :orderedBy : CustomerYvette . 
+
+### Customer Instances
+:CustomerYvette a :Customer ;
+    schema:name "Yvette" . 
+
+### Review
+:Review002 a :Review ;
+    :reviewedBy :Yvette ; # Link to the customer instance
+    rdfs:comment "Quality ingredients provided for a superb eating experience!" .
+	
+3. #--------------------------------------------------#
+
+### Recipe Instances
+:AuthenticChickenKatsuCurry a :Recipe ;
+    :cookTime "PT45M" 
+    :hasIngredient : ChickenBreast ;
+    :hasIngredient : Flour ;
+    :hasIngredient : Salt ;
+    :hasIngredient : Onion ;
+    :hasIngredient : Ginger ;
+    :hasIngredient : Courgettes ;
+    :hasIngredient : ChestnutMushroom ;
+    :hasIngredient : Water ;
+    :hasIngredient : CurryPowder ;
+    :hasIngredient : Eggs ;
+    :hasIngredient : PankoBreadcrumbs ;
+    :hasIngredient : Pepper ;
+    :hasIngredient : Garlic;
+    :hasIngredient : Carrots ;
+    :hasIngredient : Apples ;
+    :hasIngredient : Sake ;
+    :hasIngredient : CurryBlock ;
+    :hasIngredient : OliveOil ;
+    :proteinContent 65.0 ; 
+    :energyContent 1360.0 ;
+    :fatContent 73.0 ; 
+    :carbohydrateContent 108.0 ;
+    :heatLevel "mild" ;
+    :suitableForBudget "High" ;
+    :recipeYield "3" ;
+    :orderedBy : CustomerOscar . 
+
+### Customer Instances
+:CustomerOscar a :Customer ;
+    schema:name "Oscar" . 
+
+### Review
+:Review003 a :Review ;
+    :reviewedBy :Oscar ; # Link to the customer instance
+    rdfs:comment "Excellent quality and service consistently" .
+
+4. #--------------------------------------------------#
+
+### Recipe Instances
+:AgedChateaubriand a :Recipe ;
+    :cookTime "PT20M" 
+    :hasIngredient : OliveOil ;
+    :hasIngredient : GarlicCloves ;
+    :hasIngredient : SeaSalt ;
+    :hasIngredient : Butter ;
+    :hasIngredient : Chateaubriand ;
+    :hasIngredient : FreshThyme ;
+    :hasIngredient : CherryTomatoes ;
+    :hasIngredient : Pepper ;
+    :proteinContent 59.0 ; 
+    :energyContent 958.0 ;
+    :fatContent 73.0 ; 
+    :carbohydrateContent 13.0 ;
+    :heatLevel "High" ;
+    :suitableForBudget "Low" ; # expensive
+    :recipeYield "2" ;
+    :orderedBy : CustomerYvette . 
+
+### Customer Instances
+:CustomerSeanFanning a :Customer ;
+    schema:name "SeanFanning" . 
+
+### Review
+:Review004 a :Review ;
+    :reviewedBy :SeanFanning ; # Link to the customer instance
+    rdfs:comment "Delightful chateaubriand" .
+
+5. #--------------------------------------------------#
+
+### Recipe Instances
+:GreekMeze a :Recipe ;
+    :cookTime "PT90M" 
+    :hasIngredient : Pepper ;
+    :hasIngredient : Eggs ;
+    :hasIngredient : OliveOil ;
+    :hasIngredient : MincedBeef ;
+    :hasIngredient : FreshMint ;
+    :hasIngredient : SeaSalt ;
+    :hasIngredient : PlainFlour ;
+    :hasIngredient : Onion ;
+    :hasIngredient : DriedOregano ;
+    :hasIngredient : EVOO ;
+    :hasIngredient : CuminPowder ;
+    :proteinContent 32.0 ; 
+    :energyContent 573.0 ;
+    :fatContent 38.0 ; 
+    :carbohydrateContent 23.0 ;
+    :heatLevel "Low" ;
+    :suitableForBudget "Low" ; # expensive
+    :recipeYield "3" ;
+    :orderedBy : CustomerJane . 
+
+### Customer Instances
+:CustomerJane a :Customer ;
+    schema:name "Jane" . 
+
+### Review
+:Review005 a :Review ;
+    :reviewedBy :Jane ; # Link to the customer instance
+    rdfs:comment "Loved my Greek Meze Will definitely use Cookaway again" .
+
+6. #--------------------------------------------------#
+
+### Recipe Instances
+:UmamiRamen a :Recipe ;
+    :cookTime "PT120M" 
+    :hasIngredient : SoySauce ;
+    :hasIngredient : Eggs ;
+    :hasIngredient : YonduVegetable ;
+    :hasIngredient : Tofu ;
+    :hasIngredient : BabyCorn ;
+    :hasIngredient : Peas ;
+    :hasIngredient : ChilliOil ;
+    :hasIngredient : Mirin ;
+    :hasIngredient : WakameSeaweed ;
+    :hasIngredient : PakChoi ;
+    :hasIngredient : OliveOil ;
+    :hasIngredient : FarmentedBambooShoots ;    
+    :proteinContent 32.0 ; 
+    :energyContent 658.0 ;
+    :fatContent 44.0 ; 
+    :carbohydrateContent 27.0 ;
+    :heatLevel "Mild" ;
+    :suitableForBudget "Medium" ;
+    :recipeYield "2" ;
+    :orderedBy : CustomerProcter . 
+
+### Customer Instances
+:CustomerProcter a :Customer ;
+    schema:name "Procter" . 
+
+### Review
+:Review006 a :Review ;
+    :reviewedBy :Procter ; # Link to the customer instance
+    rdfs:comment "Lovely idea instead of going out for dinner. Cooking experience" .
+
+7. #--------------------------------------------------#
+
+### Recipe Instances
+:SpanishTapas a :Recipe ;
+    :cookTime "PT10M" 
+    :hasIngredient : KingPrawn ;
+    :hasIngredient : SeaSalt ;
+    :hasIngredient : GarlicCloves ;
+    :hasIngredient : ChillieFlakes ;
+    :hasIngredient : OliveOil ;   
+    :proteinContent 24.0 ; 
+    :energyContent 231.0 ;
+    :fatContent 15.0 ; 
+    :carbohydrateContent 0.5 ;
+    :heatLevel "Mild" ;
+    :suitableForBudget "High" ;
+    :recipeYield "2" ;
+    :orderedBy : CustomerJeffHowell . 
+
+### Customer Instances
+:CustomerJeffHowell a :Customer ;
+    schema:name "JeffHowell" . 
+
+### Review
+:Review007 a :Review ;
+    :reviewedBy :JeffHowell ; # Link to the customer instance
+    rdfs:comment "The whole deal was good from start to finish well done" .
+
+8. #--------------------------------------------------#
+
+### Recipe Instances
+:AgedRibEyeSteak a :Recipe ;
+    :cookTime "PT50M" 
+    :hasIngredient : OliveOil ;
+    :hasIngredient : SeaSalt ;
+    :hasIngredient : FreshRosemary ;
+    :hasIngredient : Ribeye ;
+    :hasIngredient : Pepper ;   
+    :proteinContent 59.0 ; 
+    :energyContent 785.0 ;
+    :fatContent 61.0 ; 
+    :carbohydrateContent 2.1 ;
+    :heatLevel "High" ;
+    :suitableForBudget "Low" ;
+    :recipeYield "2" ;
+    :orderedBy : CustomerCaroline . 
+
+### Customer Instances
+:CustomerCaroline a :Customer ;
+    schema:name "Caroline" . 
+
+### Review
+:Review008 a :Review ;
+    :reviewedBy :Caroline ; # Link to the customer instance
+    rdfs:comment "Wonderful experience. Just amazing taste. Great quality products" .
+
+9. #--------------------------------------------------#
+
+### Recipe Instances
+:ChickenKatsuCurry a :Recipe ;
+    :cookTime "PT40M" 
+    :hasIngredient : ChickenBreast ;
+    :hasIngredient : Salt ;
+    :hasIngredient : PlainFlour ;
+    :hasIngredient : Onion ;
+    :hasIngredient : Ginger ;
+    :hasIngredient : Courgettes ;
+    :hasIngredient : ChestnutMushroom ;
+    :hasIngredient : CurryPowder ;
+    :hasIngredient : Eggs ;
+    :hasIngredient : Pepper ;  
+    :hasIngredient : PankoBreadcrumbs ;
+    :hasIngredient : GarlicCloves ;
+    :hasIngredient : PlainFlour ;
+    :hasIngredient : Carrots ;
+    :hasIngredient : Oil ; 
+    :proteinContent 65.0 ; 
+    :energyContent 1360.0 ;
+    :fatContent 73.0 ; 
+    :carbohydrateContent 108.0 ;
+    :heatLevel "Mild" ;
+    :suitableForBudget "Low" ;
+    :recipeYield "3" ;
+    :orderedBy : CustomerOscar . 
+
+### Customer Instances
+:CustomerOscar a :Customer ;
+    schema:name "Oscar" . 
+
+### Review
+:Review009 a :Review ;
+    :reviewedBy :Oscar ; # Link to the customer instance
+    rdfs:comment "Excellent quality and service consistently" .
+
+10. #--------------------------------------------------#
+
+### Recipe Instances
+:ValenciaPaella a :Recipe ;
+    :cookTime "PT35M" 
+    :hasIngredient : Saffron ;
+    :hasIngredient : Oil ;
+    :hasIngredient : Beans ;
+    :hasIngredient : GarlicCloves ;
+    :hasIngredient : Turmeric ;
+    :hasIngredient : FreshRosmary ;
+    :hasIngredient : Salt ;
+    :hasIngredient : Chicken ;
+    :hasIngredient : Pepper ;
+    :hasIngredient : Artichokes ;  
+    :hasIngredient : SmokedPaprika ;
+    :hasIngredient : Tomato ;
+    :hasIngredient : rice ;
+    :proteinContent 38.0 ; 
+    :energyContent 682.0 ;
+    :fatContent 21.0 ; 
+    :carbohydrateContent 80.0 ;
+    :heatLevel "Low" ;
+    :suitableForBudget "Low" ;
+    :recipeYield "2" ;
+    :orderedBy : CustomerOscar . 
+
+### Customer Instances
+:CustomerAndrewCannon a :Customer ;
+    schema:name "AndrewCannon" . 
+
+### Review
+:Review0010 a :Review ;
+    :reviewedBy :AndrewCannon ; # Link to the customer instance
+    rdfs:comment "Excellent tasty food, clear instructions, wonderful ingredients" .
+
+11. #--------------------------------------------------#
+
+### Recipe Instances
+:RailwayLambCurry a :Recipe ;
+    :cookTime "PT35M" 
+    :hasIngredient : Cinnamon ;
+    :hasIngredient : Oil ;
+    :hasIngredient : Chilli ;
+    :hasIngredient : Cardamom ;
+    :hasIngredient : Coriender ;
+    :hasIngredient : Ginger ;
+    :hasIngredient : Garlic ;
+    :hasIngredient : Tamarind ;
+    :hasIngredient : Salt ;
+    :hasIngredient : LambShoulder ;  
+    :hasIngredient : Ghee ;
+    :hasIngredient : WholeCloves ;
+    :hasIngredient : CuminSeeds ;
+    :hasIngredient : CurryLeaves ;
+    :hasIngredient : CoconutMilk ;
+    :proteinContent 24.0 ; 
+    :energyContent 575.0 ;
+    :fatContent 46.0 ; 
+    :carbohydrateContent 14.0 ;
+    :heatLevel "High" ;
+    :suitableForBudget "High" ;
+    :recipeYield "2" ;
+    :orderedBy : CustomerMikeC . 
+
+### Customer Instances
+:CustomerMikeC a :Customer ;
+    schema:name "MikeC" . 
+
+### Review
+:Review0011 a :Review ;
+    :reviewedBy :MikeC ; # Link to the customer instance
+    rdfs:comment "Yes, ingredients well organized and cooking instructions are very details" .
+
+12. #--------------------------------------------------#
+
+### Recipe Instances
+:ChickenRendang a :Recipe ;
+    :cookTime "PT60M" 
+    :hasIngredient : FriedChillies ;
+    :hasIngredient : LemonGrass ;
+    :hasIngredient : Galangal ;
+    :hasIngredient : Cardamom ;
+    :hasIngredient : SeaSalt ;
+    :hasIngredient : KaffirLimeLeaves ;
+    :hasIngredient : Coconut ;
+    :hasIngredient : Tamarind ;
+    :hasIngredient : Onion ;
+    :hasIngredient : Ginger ;  
+    :hasIngredient : Chicken ;
+    :hasIngredient : Oil ;
+    :hasIngredient : CinnamonSticks ;
+    :hasIngredient : ChickenStockPowder ;
+    :hasIngredient : Sugar ;
+    :proteinContent 62.0 ; 
+    :energyContent 1259.0 ;
+    :fatContent 100.0 ; 
+    :carbohydrateContent 25.0 ;
+    :heatLevel "Medium" ;
+    :suitableForBudget "Low" ;
+    :recipeYield "2" ;
+    :orderedBy : CustomerMikeC . 
+
+### Customer Instances
+:CustomerSandra a :Customer ;
+    schema:name "Sandra" . 
+
+### Review
+:Review0012 a :Review ;
+    :reviewedBy :Sandra ; # Link to the customer instance
+    rdfs:comment "Good food and portion
+
+#------------------- Ingredients -------------------------#
+
+### Ingredient Instances
+:Spaghetti a :Ingredient ;
+    rdfs:label "Spaghetti"^^xsd:string ;
+    rdfs:comment "A type of pasta."^^xsd:string .
+
+:TomatoSauce a :Ingredient ;
+    rdfs:label "Tomato Sauce"^^xsd:string ;
+    rdfs:comment "A sauce made from tomatoes."^^xsd:string .
+
+:GroundBeef a :Ingredient ;
+    rdfs:label "Ground Beef"^^xsd:string ;
+    rdfs:comment "Ground beef for the recipe."^^xsd:string .
+
+:OliveOil a :Ingredient ;
+    rdfs:label "Olive Oil"^^xsd:string ;
+    rdfs:comment "A type of oil."^^xsd:string .
+
+:Beeffillet a :Ingredient ;
+    rdfs:label "Beef Fillet"^^xsd:string ;
+    rdfs:comment "A cut of beef."^^xsd:string .
+
+:Mushrooms a :Ingredient ;
+    rdfs:label "Mushrooms"^^xsd:string ;
+    rdfs:comment "Mushrooms."^^xsd:string .
+
+:Mustard a :Ingredient ;
+    rdfs:label "Mustard"^^xsd:string ;
+    rdfs:comment "A condiment."^^xsd:string .
+
+:Salt a :Ingredient ;
+    rdfs:label "Salt"^^xsd:string ;
+    rdfs:comment "Salt."^^xsd:string .
+
+:Eggs a :Ingredient ;
+    rdfs:label "Eggs"^^xsd:string ;
+    rdfs:comment "Chicken eggs."^^xsd:string .
+
+:Flour a :Ingredient ;
+    rdfs:label "Flour"^^xsd:string ;
+    rdfs:comment "Flour used in cooking."^^xsd:string .
+
+:Pastry a :Ingredient ;
+    rdfs:label "Pastry"^^xsd:string ;
+    rdfs:comment "A dough of flour, fat, and water."^^xsd:string .
